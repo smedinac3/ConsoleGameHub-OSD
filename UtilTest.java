@@ -2,13 +2,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.stream.IntStream;
 
 /**
  * Tests for class Util.
  *
  * @author  Dr. Jody Paul
  * @author  CS3250 Spring 2025
- * @version 20240127
+ * @version 20250127
+ * @version 20250309
  */
 public class UtilTest {
     /**
@@ -60,5 +62,16 @@ public class UtilTest {
         assertEquals(24157817, Util.fibon(37));
         assertEquals(102334155, Util.fibon(40));
         assertEquals(12586269025L, Util.fibon(50));
+    }
+
+    /** Example test (interval == 2). */
+    @Test
+    public void detectRepeats2Test() {
+        IntStream inputStream = IntStream.of(4, 53, 6, 4, 9, 6, 0, 9);
+        int count = Util.detectRepeats(inputStream, 2);
+        assertEquals(3, count);
+        inputStream = IntStream.of(1, 2, 3, 3, 2, 3, 1, 1, 2, 1, 1, 2, 3);
+        count = Util.detectRepeats(inputStream, 2);
+        assertEquals(5, count);
     }
 }
