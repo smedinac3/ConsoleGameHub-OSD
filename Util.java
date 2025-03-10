@@ -9,9 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger; // Needed for use inside lambd
  * @version 20250127
  * @version 20250309
  */
-public class Util {
+public final class Util {
     /**
-     * Hidden constructor for utility class
+     * Hidden constructor for utility class.
      */
     private Util() { }
 
@@ -21,10 +21,10 @@ public class Util {
      * @param  index  the index into the Fibonacci sequence
      * @return the Fibonacci number corresponding to the parameter
      */
-    public static long fibon(int index) {
+    public static long fibon(final int index) {
         if (index <= 0) return 0;
         if (index == 1) return 1;
-        return fibon(index - 1) + fibon(index - 2);        
+        return fibon(index - 1) + fibon(index - 2);
     }
 
     /**
@@ -37,24 +37,26 @@ public class Util {
      * @param interval the number of intervening elements between repeats
      * @return the number of repeated values identified
      */
-    public static int detectRepeats(IntStream numberStream, int interval) {
-        
+    public static int detectRepeats(final IntStream numberStream,
+                                    final int interval) {
+
         AtomicInteger counter = new AtomicInteger(0);
 
         numberStream.forEach(num -> {
             System.out.println("STATUS:: Processing: " + num);
             //
-            // Insert code to determine if current num is repeat at specified interval.
+            // Insert code to determine if num is repeat at specified interval.
             {   // If so, report and increment counter.
-                System.out.println("IDENTIFIED:: Repeat after " + interval + " numbers: " + num);
+                System.out.println("IDENTIFIED:: Repeat after "
+                                   + interval + " numbers: " + num);
                 counter.incrementAndGet();
                 //
             }
-            // 
+            //
             // Insert any additional contextual code.
             //
         });
-        
+
         return counter.get();
     }
 }
