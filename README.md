@@ -1,1 +1,2 @@
-# cs3250_spring2025
+# cs3250 Spring 2025
+Repository for explorations of quality-driven programming
