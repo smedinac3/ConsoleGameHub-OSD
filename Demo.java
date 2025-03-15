@@ -1,8 +1,8 @@
 import java.util.Scanner;
 import java.util.stream.IntStream;
 /**
- * Interactive driver for Util.detectRepeats method.
- * Does not implement error-checking or user experience facilitation.
+ * CLI driver for Util.detectRepeats method.
+ * Does not implement error-checking or user-experience facilitation.
  * @author Dr. Jody Paul
  * @version 20250315.4
  */
