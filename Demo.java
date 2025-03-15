@@ -4,15 +4,14 @@ import java.util.stream.IntStream;
  * Interactive driver for Util.detectRepeats method.
  * Does not implement error-checking or user experience facilitation.
  * @author Dr. Jody Paul
- * @version 20250315.3
+ * @version 20250315.4
  */
 public class Demo {
-    /** Number of elements between repeated values. */
+    /** Default number of elements between repeated values. */
     public static final int DEFAULT_INTERVAL = 3;
     /**
-     * Accept input from terminal and identify repeated entries at a
-     * specified distance from each other.
-     * An integer command line parameter specifies the distance.
+     * Accept input from stdin and identify repeated entries at a
+     * distance from each other specified by command line parameter.
      * A default value is used if no parameter is given.
      * @param args the number of items between matching values
      */
