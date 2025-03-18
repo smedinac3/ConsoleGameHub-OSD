@@ -2,11 +2,11 @@
 <!-- Copyright (c) Dr. Jody Paul
      This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
      http://creativecommons.org/licenses/by-sa/4.0/ -->
-<project name="DecisionSupport" basedir="." default="all">
+<project name="DetectRepeats" basedir="." default="all">
   <description>
     Build file for CS3250 Spring 2025
   </description>
-  <property name="version" value="20250309_1"/>
+  <property name="version" value="20250317"/>
   <property name="author" value="Dr. Jody Paul"/>
   <property name="copyright" value="Copyright (c) Dr. Jody Paul"/>
   <property name="license"
@@ -23,7 +23,7 @@
   <property name="api.url"     value="https://docs.oracle.com/en/java/javase/17/docs/api/" />
 
   <!-- Identify main class -->
-  <property name="main-class"  value="NoMainClass"/>
+  <property name="main-class"  value="Demo"/>
 
   <!-- Establish classpaths for production and testing. -->
   <path id="classpath">
@@ -68,16 +68,14 @@
     </jar>
   </target>
 
-  <!--
   <target name="run" description="Run the application" depends="jar">
     <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
   </target>
-  -->
-  <!--
+
   <target name="main"
           description="Clean, Build, and Run"
           depends="clean,run"/>
-  -->
+
   <target name="init">
     <!-- Create a time stamp -->
     <tstamp/>
