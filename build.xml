@@ -2,11 +2,11 @@
 <!-- Copyright (c) Dr. Jody Paul
      This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
      http://creativecommons.org/licenses/by-sa/4.0/ -->
-<project name="DetectRepeats" basedir="." default="all">
+<project name="ConsoleGameHub" basedir="." default="all">
   <description>
     Build file for CS3250 Spring 2025
   </description>
-  <property name="version" value="20250330"/>
+  <property name="version" value="20250401"/>
   <property name="author" value="Dr. Jody Paul"/>
   <property name="copyright" value="Copyright (c) Dr. Jody Paul"/>
   <property name="license"
