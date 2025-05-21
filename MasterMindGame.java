@@ -11,7 +11,12 @@ import java.util.Optional;
  * @version 1
  */
 class MasterMindGame implements Game {
-    public String getName() { return "MasterMind"; }
+    @Override
+    public String getName() {
+        return "MasterMind";
+    }
+
+    @Override
     public Optional<Integer> play() {
         System.out.println("[Playing MasterMind - Placeholder]");
         return Optional.empty();

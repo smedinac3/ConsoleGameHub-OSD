@@ -11,7 +11,12 @@ import java.util.Optional;
  * @version 1
  */
 class LightsOutGame implements Game {
-    public String getName() { return "Lights Out"; }
+    @Override
+    public String getName() {
+        return "Lights Out";
+    }
+
+    @Override
     public Optional<Integer> play() {
         System.out.println("Welcome to Lights Out!");
         System.out.println("The tiles have an 'on' or 'off' function.");

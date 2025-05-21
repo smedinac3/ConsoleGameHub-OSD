@@ -12,13 +12,16 @@ import java.util.Optional;
  * @version 1
  */
 class HangmanGame implements Game {
+    @Override
     public String getName() {
-    return "Hangman";
-}
+        return "Hangman";
+    }
+
+    @Override
     public Optional<Integer> play() {
       System.out.println("Welcome to Hangman!");
       System.out.println("Guess the hidden word one letter at a time.");
       System.out.println("Each wrong guess reduces your number of tries.");
-        return Optional.empty();
+      return Optional.empty();
     }
 }

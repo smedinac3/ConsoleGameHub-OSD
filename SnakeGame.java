@@ -12,7 +12,12 @@ import java.util.Optional;
  * @version 1
  */
 class SnakeGame implements Game {
-    public String getName() { return "Snake"; }
+    @Override
+    public String getName() {
+        return "Snake";
+    }
+
+    @Override
     public Optional<Integer> play() {
         System.out.println("[Playing Snake - Placeholder]");
         return Optional.empty();

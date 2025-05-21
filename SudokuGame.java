@@ -11,7 +11,12 @@ import java.util.Optional;
  * @version 1
  */
 class SudokuGame implements Game {
-    public String getName() { return "Sudoku"; }
+    @Override
+    public String getName() {
+        return "Sudoku";
+    }
+
+    @Override
     public Optional<Integer> play() {
         System.out.println("[Playing Sudoku - Placeholder]");
         return Optional.empty();

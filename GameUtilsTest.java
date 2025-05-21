@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Collections;
 /**
 * A collection of tests for the GameUtils class.
-*@Author Landry Vewenda
-*@Author Efream Fsahaye
+* @author Landry Vewenda
+* @author Efream Fsahaye
 */
 public class GameUtilsTest {
         @Test

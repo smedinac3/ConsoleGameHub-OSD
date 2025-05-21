@@ -217,9 +217,7 @@ public class GameLauncherTest {
     }
     /**
      * Tests to see if Clear History can be selected by user.
-     * @param input   Input string to simulate via Scanner
      * @param tempDir Derectory to store temporary history file
-     *
      */
     @Test
     public void testClearHistoryInput(@TempDir final Path tempDir) {
@@ -233,7 +231,6 @@ public class GameLauncherTest {
 
     /**
      * Tests to see if Save file is cleared for clearHistory
-     * @param input   Input string to simulate via Scanner
      * @param tempDir Derectory to store temporary history file
      */
     @Test

@@ -12,15 +12,12 @@ import java.util.Optional;
  */
 class WordGuessGame implements Game {
 
-    /**
-     * Returns the name of the game.
-     * @return the name "Word Guess"
-     */
-    public String getName()
-    {
+    @Override
+    public String getName() {
         return "Word Guess";
     }
 
+    @Override
     public Optional<Integer> play() {
         System.out.println(
             "[Playing Word Guess - You will have a limited number of attempts"

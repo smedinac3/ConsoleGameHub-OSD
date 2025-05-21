@@ -10,10 +10,12 @@ import java.io.FileOutputStream;
 
 /**
  * Track history and stats of games played.
- * @version 1
+ * @author Jody Paul (assisted by chatGPT)
+ * @author Cesar Soto, Mason Proctor, Luke Ross
+ * @version 2
  */
 class GameHistoryTracker implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     /** Collection of play stats for each game. */
     private final HashMap<String, GameStats> statsMap = new HashMap<>();
 
@@ -24,7 +26,7 @@ class GameHistoryTracker implements Serializable {
      */
     public void recordPlay(final String gameName, final Integer score) {
         GameStats stats = statsMap.getOrDefault(gameName, new GameStats());
-        stats.timesPlayed++;
+        stats.incrementTimesPlayed();
         if (score != null) {
             stats.totalScore += score;
             stats.scores.add(score);
@@ -59,7 +61,8 @@ class GameHistoryTracker implements Serializable {
      * @throws IOException if an I/O error occurs
      */
     public void saveHistory(final String filename) throws IOException {
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
+        try (ObjectOutputStream out =
+                new ObjectOutputStream(new FileOutputStream(filename))) {
             out.writeObject(this);
         }
     }
@@ -67,27 +70,27 @@ class GameHistoryTracker implements Serializable {
     /**
      * Clears the history file.
      * @param filename takes name of file to clear history from.
-     * @author Cesar Soto, Mason Proctor, Luke Ross
      */
     public void clearHistory(final String filename) {
         statsMap.clear();
         try {
             saveHistory(filename);
         } catch (IOException e) {
-            System.out.println("game history save failed: " + e.getMessage());
+            System.out.println("Game history save failed: " + e.getMessage());
         }
     }
 
     /**
      * Loads the game history from a file.
      * @param filename the name of the file to load from
-     * @return a GameHistoryTracker instance
+     * @return useful game history tracker
      */
     public static GameHistoryTracker loadHistory(final String filename) {
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename))) {
+        try (ObjectInputStream in
+                = new ObjectInputStream(new FileInputStream(filename))) {
             return (GameHistoryTracker) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println(
+            System.err.println(
                 "No previous history found or failed to load. Starting fresh.");
             return new GameHistoryTracker();
         }
@@ -97,9 +100,25 @@ class GameHistoryTracker implements Serializable {
      * Inner class to track stats for a single game.
      */
     private static class GameStats implements Serializable {
-        private static final long serialVersionUID = 1L;
-        int timesPlayed = 0;
-        int totalScore = 0;
-        ArrayList<Integer> scores = new ArrayList<>();
+        private static final long serialVersionUID = 2L;
+        /** The number of times game has been played. */
+        private int timesPlayed = 0;
+        /** The current total score. */
+        private int totalScore = 0;
+        /** All recorded scores. */
+        private ArrayList<Integer> scores = new ArrayList<>();
+        /**
+         * Access the number of times the game has been played.
+         * @return times played
+         */
+        int getTimesPlayed() {
+            return this.timesPlayed;
+        }
+        /**
+         * Increment the number of times the game has been played.
+         */
+        void incrementTimesPlayed() {
+            this.timesPlayed++;
+        }
     }
 }

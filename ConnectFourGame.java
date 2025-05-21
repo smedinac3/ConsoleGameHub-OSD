@@ -13,7 +13,12 @@ import java.util.Optional;
  * @version 1
  */
 class ConnectFourGame implements Game {
-    public String getName() { return "Connect Four"; }
+    @Override
+    public String getName() {
+        return "Connect Four";
+    }
+
+    @Override
     public Optional<Integer> play() {
         System.out.println("[Playing Connect Four - Placeholder]");
         return Optional.empty();
