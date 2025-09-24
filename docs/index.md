@@ -20,6 +20,9 @@ Find and contribute to [Discussions](https://github.com/MetroCS/ConsoleGameHub/d
 
 ## Resources for Student Developers
 ### Sample Executable Java File (Jar)
-[Decision Support](DecisionSupport.jar)
-Command line execution: ```java -jar DecisionSupport.jar```
+[Console Game Hub]
+
+Command line execution: ```java -jar ConsoleGameHub.jar```
+
 GUI execution: Double-click the file icon (May not work on all systems.)
+
